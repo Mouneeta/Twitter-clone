@@ -69,7 +69,7 @@ The screenshots of the mobile applications is given below.
 
 ## Unit Test
 
-In signin and login page for unit testing is done for empty email/password returns error string and non-empty email/password returns null in the following file
+In signup and login page for unit testing is done for empty email/password returns error string and non-empty email/password returns null in the following file
 
 ```bash
   test/email_password_validator_test.dart
