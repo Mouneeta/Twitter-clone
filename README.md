@@ -53,18 +53,18 @@ The screenshots of the mobile applications is given below.
 ## Creating new account ! 
 
 <div align = 'center'>
-<img width="300"  src="https://user-images.githubusercontent.com/71824279/232725489-5d7db2e6-ae8c-4da5-a845-3dfd1bff6b1d.png">
-<img width="300"  src="https://user-images.githubusercontent.com/71824279/232722075-bbf33cf9-1448-483c-8e78-f64b9c140ca5.png">
-<img width="300"  src="https://user-images.githubusercontent.com/71824279/232726303-a1b44a3e-4097-4fc8-bcdd-0ba009eda18d.png">
+<img width="200"  src="https://user-images.githubusercontent.com/71824279/232725489-5d7db2e6-ae8c-4da5-a845-3dfd1bff6b1d.png">
+<img width="200"  src="https://user-images.githubusercontent.com/71824279/232722075-bbf33cf9-1448-483c-8e78-f64b9c140ca5.png">
+<img width="200"  src="https://user-images.githubusercontent.com/71824279/232726303-a1b44a3e-4097-4fc8-bcdd-0ba009eda18d.png">
 </div>
 
 <br>
 
 ## Tweeting text, image and link
 <div align='center'>
-<img width="300"  src="https://user-images.githubusercontent.com/71824279/232726347-cf690065-a909-45b0-b282-88b4de6c1507.png">
-<img width="300"  src="https://user-images.githubusercontent.com/71824279/232726212-b646e063-d29c-4698-be21-264520d9fb0e.png">
-<img width="300"  src="https://user-images.githubusercontent.com/71824279/232726232-781339be-9e82-469a-8fe2-77a825807e3e.png">
+<img width="200"  src="https://user-images.githubusercontent.com/71824279/232726347-cf690065-a909-45b0-b282-88b4de6c1507.png">
+<img width="200"  src="https://user-images.githubusercontent.com/71824279/232726212-b646e063-d29c-4698-be21-264520d9fb0e.png">
+<img width="200"  src="https://user-images.githubusercontent.com/71824279/232726232-781339be-9e82-469a-8fe2-77a825807e3e.png">
 </div>
 
 ## Unit Test
