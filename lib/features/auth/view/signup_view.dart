@@ -9,6 +9,26 @@ import '../../../common/rounded_small_button.dart';
 import '../widgets/auth_field.dart';
 import 'login_view.dart';
 
+class SignInEmailValidator{
+  static String validateEmail(String value){
+    String res = "";
+    if(value==""){
+      res = "email is required";
+    }
+    return res;
+  }
+}
+
+class SignInPasswordValidator{
+  static String validatePassword(String value){
+    String res = "";
+    if(value==""){
+      res = "password is required";
+    }
+    return res;
+  }
+}
+
 class SignUpView extends ConsumerStatefulWidget {
   static route() => MaterialPageRoute(
     builder: (context) => const SignUpView(),
@@ -38,6 +58,9 @@ class _SignUpViewState extends ConsumerState<SignUpView> {
         password: passwordController.text,
         context: context,
     );
+
+    print(SignInEmailValidator.validateEmail(emailController.text));
+    print(SignInPasswordValidator.validatePassword(passwordController.text));
   }
     @override
       Widget build(BuildContext context) {
