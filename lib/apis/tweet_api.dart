@@ -5,63 +5,53 @@ import 'package:fpdart/fpdart.dart';
 import 'package:twitter_clone/constants/appwrite_constants.dart';
 import 'package:twitter_clone/core/core.dart';
 import 'package:twitter_clone/core/providers.dart';
-import 'package:twitter_clone/model/tweet_model.dart';
+import '../models/tweet_model.dart';
 
 final tweetAPIProvider = Provider((ref) {
   return TweetAPI(
-    db: ref.watch(appwriteDatebaseProvider),
+    db: ref.watch(appwriteDatabaseProvider),
     realtime: ref.watch(appwriteRealtimeProvider),
   );
 });
 
-
-abstract class ITweetAPI{
+abstract class ITweetAPI {
   FutureEither<Document> shareTweet(Tweet tweet);
   Future<List<Document>> getTweets();
   Stream<RealtimeMessage> getLatestTweet();
 }
 
-class TweetAPI implements ITweetAPI{
+class TweetAPI implements ITweetAPI {
   final Databases _db;
   final Realtime _realtime;
   TweetAPI({
-    required Databases db ,
+    required Databases db,
     required Realtime realtime,
-  }) :
-        _db = db,
+  })  : _db = db,
         _realtime = realtime;
-
   @override
   FutureEither<Document> shareTweet(Tweet tweet) async {
-    try{
+    try {
       final document = await _db.createDocument(
-        databaseId: AppwriteConstants.databaseId,
-        collectionId:AppwriteConstants.tweetsCollection,
-        documentId: ID.unique(),
-        data: tweet.toMap(),
-      );
+          databaseId: AppwriteConstants.databaseId,
+          collectionId: AppwriteConstants.tweetsCollection,
+          documentId: ID.unique(),
+          data: tweet.toMap());
       return right(document);
     } on AppwriteException catch (e, st) {
-      return left(
-        Failure(
-          e.message?? 'some unexpected error occured',
-          st,
-        ),
-      );
-    } catch (e,st) {
-      return left(Failure(e.toString(),st));
+      return left(Failure(e.message ?? 'Some unexpected error occured', st));
+    } catch (e, st) {
+      return left(Failure(e.toString(), st));
     }
-
-    }
+  }
 
   @override
   Future<List<Document>> getTweets() async {
     final documents = await _db.listDocuments(
-        databaseId: AppwriteConstants.databaseId,
-        collectionId: AppwriteConstants.tweetsCollection,
-        queries: [
-          Query.orderDesc('tweetedAt'),
-        ],
+      databaseId: AppwriteConstants.databaseId,
+      collectionId: AppwriteConstants.tweetsCollection,
+      queries: [
+        Query.orderDesc('tweetedAt'),
+      ]
     );
     return documents.documents;
   }

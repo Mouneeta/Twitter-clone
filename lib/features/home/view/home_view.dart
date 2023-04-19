@@ -1,10 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:twitter_clone/constants/constants.dart';
+import 'package:twitter_clone/constants/assets_constants.dart';
+import 'package:twitter_clone/constants/ui_constants.dart';
+import 'package:twitter_clone/features/tweet/views/create_tweet_view.dart';
 import 'package:twitter_clone/theme/pallete.dart';
 
-import '../../tweet/views/create_tweet_view.dart';
 class HomeView extends StatefulWidget {
   static route() => MaterialPageRoute(
     builder: (context) => const HomeView(),
@@ -34,7 +38,7 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       appBar: appBar,
       body: IndexedStack(
-       index: _page,
+        index: _page,
         children: UIConstants.bottomTabBarPages,
       ),
       floatingActionButton: FloatingActionButton(
@@ -51,12 +55,12 @@ class _HomeViewState extends State<HomeView> {
         backgroundColor: Pallete.backgroundColor,
         items: [
           BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                _page == 0 ?
-                AssetsConstants.homeFilledIcon :
-                AssetsConstants.homeOutlinedIcon,
-                color: Pallete.whiteColor,
-              ),
+            icon: SvgPicture.asset(
+              _page == 0 ?
+              AssetsConstants.homeFilledIcon :
+              AssetsConstants.homeOutlinedIcon,
+              color: Pallete.whiteColor,
+            ),
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
@@ -77,5 +81,3 @@ class _HomeViewState extends State<HomeView> {
     );
   }
 }
-
-

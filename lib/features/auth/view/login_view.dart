@@ -1,21 +1,23 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:twitter_clone/common/loading_page.dart';
+import 'package:twitter_clone/common/rounded_small_button.dart';
 import 'package:twitter_clone/constants/constants.dart';
+import 'package:twitter_clone/features/auth/controller/auth_controler.dart';
+import 'package:twitter_clone/features/auth/view/signup_view.dart';
 import 'package:twitter_clone/features/auth/widgets/auth_field.dart';
 import 'package:twitter_clone/theme/pallete.dart';
-import 'package:twitter_clone/common/rounded_small_button.dart';
-import 'package:twitter_clone/features/auth/controller/auth_controller.dart';
-import 'signup_view.dart';
 
 class EmailFieldValidator{
   static String validateEmail(String value){
-      String res = "";
-      if(value==""){
-        res = "email is required";
-      }
-      return res;
+    String res = "";
+    if(value==""){
+      res = "email is required";
+    }
+    return res;
   }
 }
 
@@ -73,8 +75,8 @@ class _LoginViewState extends ConsumerState<LoginView> {
     return Scaffold(
       appBar: appbar,
       body: isLoading
-        ? const Loader()
-      : Center(
+          ? const Loader()
+          : Center(
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -90,8 +92,8 @@ class _LoginViewState extends ConsumerState<LoginView> {
                 ),
 
                 AuthField(
-                    controller: passwordController,
-                    hintText: 'Password',
+                  controller: passwordController,
+                  hintText: 'Password',
                 ),
                 const SizedBox(
                   height: 40,
@@ -105,25 +107,25 @@ class _LoginViewState extends ConsumerState<LoginView> {
                 ),
                 const SizedBox(height:40),
                 RichText(
-                    text: TextSpan(
-                       text: "Don't have an account?",
-                       children: [
-                         TextSpan(
-                           text: 'Sign up',
-                           style: const TextStyle(
-                             color: Pallete.blueColor,
-                             fontSize: 16,
-                           ),
-                           recognizer: TapGestureRecognizer()
-                             ..onTap=() {
-                               Navigator.push(
-                                 context,
-                                 SignUpView.route(),
-                               );
-                             },
-                         ),
-                       ],
-                   ),
+                  text: TextSpan(
+                    text: "Don't have an account?",
+                    children: [
+                      TextSpan(
+                        text: 'Sign up',
+                        style: const TextStyle(
+                          color: Pallete.blueColor,
+                          fontSize: 16,
+                        ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap=() {
+                            Navigator.push(
+                              context,
+                              SignUpView.route(),
+                            );
+                          },
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -133,11 +135,4 @@ class _LoginViewState extends ConsumerState<LoginView> {
     );
   }
 }
-
-
-
-
-
-
-
 

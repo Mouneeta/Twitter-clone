@@ -1,6 +1,6 @@
 # Twitter-clone
 
-A mobile application known as a "Twitter clone" copies the essential features of the well-known social networking site Twitter. Full Stack Twitter Mobile App is a clone that operates on both iOS and Android..  
+A mobile application known as a "Twitter clone" copies the essential features of the well-known social networking site Twitter. Full Stack Twitter Mobile App is a clone that operates on both iOS and Android..
 
 ## Tech Stack
 Flutter, Appwrite Authentication, Database, Storage, Realtime, Queries, Indexes, Riverpod.
@@ -32,16 +32,16 @@ Then follow the steps accordingly :
 
 
 1. Install Appwrite  [[here]](https://appwrite.io/docs/installation)
-2. Create a local Appwrite Project 
+2. Create a local Appwrite Project
 3. Create Android & iOS Apps in the Dashboard
 4. Create Appwrite Database, Storage, Index
 5. Modify Roles in Auth, Database, Storage
 6. Create Attributes for Tweets, Users
-7. Copy the required ids & change it in 
+7. Copy the required ids & change it in
 ```bash
   lib/constants/appwrite_constants.dart 
 ```
-Change your IP Address in 
+Change your IP Address in
 ```bash
 lib/constants/appwrite_constants.dart
 ```
@@ -50,7 +50,7 @@ lib/constants/appwrite_constants.dart
 ## Demo
 The screenshots of the mobile applications is given below.
 
-## Creating new account ! 
+## Creating new account !
 
 <div align = 'center'>
 <img width="200"  src="https://user-images.githubusercontent.com/71824279/232725489-5d7db2e6-ae8c-4da5-a845-3dfd1bff6b1d.png">
@@ -99,6 +99,7 @@ If you have any feedback, please reach out to us at mouneetar@gmail.com
 
 
 # Hi, I'm Mouneeta! 👋
+
 
 
 

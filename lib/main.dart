@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:twitter_clone/common/common.dart';
 import 'package:twitter_clone/common/loading_page.dart';
-import 'package:twitter_clone/features/auth/controller/auth_controller.dart';
+import 'package:twitter_clone/features/auth/controller/auth_controler.dart';
+import 'package:twitter_clone/features/auth/view/login_view.dart';
 import 'package:twitter_clone/features/auth/view/signup_view.dart';
+import 'package:twitter_clone/features/home/view/home_view.dart';
 import 'package:twitter_clone/theme/theme.dart';
-import 'common/error_page.dart';
-import 'features/home/view/home_view.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(
-      const ProviderScope(
-          child:  MyApp(),
-      ),
+    const ProviderScope(
+      child:  MyApp(),
+    ),
   );
 }
 
@@ -33,11 +35,10 @@ class MyApp extends ConsumerWidget {
           return const SignUpView();
         },
         error: (error,st) => ErrorPage(
-            error: error.toString(),
+          error: error.toString(),
         ),
         loading: () => const LoadingPage(),
       ),
     );
   }
 }
-

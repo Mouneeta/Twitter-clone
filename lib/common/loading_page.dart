@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 
 class Loader extends StatelessWidget {
-  const Loader({Key? key}) : super(key: key);
+  const Loader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class Loader extends StatelessWidget {
 }
 
 class LoadingPage extends StatelessWidget {
-  const LoadingPage({Key? key}) : super(key: key);
+  const LoadingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,5 +23,3 @@ class LoadingPage extends StatelessWidget {
     );
   }
 }
-
-

@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:twitter_clone/theme/pallete.dart';
 
 class RoundedSmallButton extends StatelessWidget {
- final VoidCallback onTap;
- final String label;
- final Color backgroundColor;
- final Color textColor;
+  final VoidCallback onTap;
+  final String label;
+  final Color backgroundColor;
+  final Color textColor;
 
-  const RoundedSmallButton({
-    super.key,
-    required this.onTap,
-    required this.label,
-    this.backgroundColor = Pallete.whiteColor ,
-    this.textColor = Pallete.backgroundColor,
-});
+  const RoundedSmallButton(
+      {super.key,
+      required this.onTap,
+      required this.label,
+      this.backgroundColor = Pallete.whiteColor,
+      this.textColor = Pallete.backgroundColor});
 
   @override
   Widget build(BuildContext context) {
@@ -21,17 +22,11 @@ class RoundedSmallButton extends StatelessWidget {
       onTap: onTap,
       child: Chip(
         label: Text(
-            label,
-            style: TextStyle(
-                color: textColor,
-                fontSize: 16,
-            ),
-       ),
-        backgroundColor: backgroundColor,
-        labelPadding: const EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 5,
+          label,
+          style: TextStyle(color: textColor, fontSize: 16),
         ),
+        backgroundColor: backgroundColor,
+        labelPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
       ),
     );
   }
